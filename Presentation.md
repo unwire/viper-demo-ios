@@ -20,9 +20,9 @@ autoscale: true
 
 # Genesis
 
-- Starting new big project when Swift 3.0 was in beta
-- Disappointed in MVC and MVVM a bit
-- Let's try something new
+- New, big and well project when Swift 3.0 was in beta
+- Disappointed in MVC, MVVM and MVVM-C a bit
+- Let's try something new...
 
 ---
 
@@ -52,35 +52,12 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 
 ---
 
-# Viper-B was found
+# Why Viper-B?
 
-- Seemed to answer the most questions
-- Very granular
-- Clean separation of concerns
-- Well defined boundaries of data processing steps and object types (components / models)
-
---- 
-
-# Viper-B module
-### Represents user story / use case / feature or screen of content
-
-**Module components**
-- **View** - view layer (UIKit / UIViewController)
-- **Presenter** & **View model** - presentation layer
-- **Interactor** & **Model** - business rules and data model
-- **Builder** - builds the module (entry point)
-- **Router** - exit point from the module
-
-**Enterprise layer**
-- **Data Manager** & **Entity** - an enterprise gateway
-- **Service** - data services (database / web)
-- **Storage** - represents fast local storage or cache
-
----
-
-## Ready to play with some _LEGO_ **BLOCKS**?
-
-![inline fit](images/lego.jpg)
+- Describes components well
+- Well defined application layers: view, presentation, business, enterprise, routing
+- Clear responsibilities and boundaries
+- Small components, resembling units
 
 ---
 
@@ -114,21 +91,19 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 
 ![left fit](images/viper-presenter-interactor.png)
 
-**Interactor**
-
-- A PONSO encapsulating business rules for specific use case.
-- Knows what tasks needs to be carried out before returning stuff to the presenter.
-- Does not care where data comes from, uses data manager(s) for this.
-- Transforms entities into models.
-- Can subscribe to events from a data managers
-- Api should have very specific methods to meet business tasks.
-
 **Model**
-
 - Encapsulates data model of results coming from **INTERACTOR**.
 - Contains raw properties that are interesting for the use case.
 - Not suitable for display (presenter's job).
 
+**Interactor**
+- A PONSO encapsulating business rules for specific use case.
+- Transforms entities into models.
+- Knows what tasks needs to be carried out before returning stuff to the presenter.
+- Does not care where data comes from, uses data manager(s) for this.
+- Does not care about presentation.
+- Can subscribe to events from a data managers
+- Api should have very specific methods to meet business tasks.
 
 --- 
 
@@ -142,9 +117,8 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - Primitives / database-like properties (Int, String)
 
 **Data Manager** (entity Gateway)
-- Grouped around domains, e.g. Hero, Image, User
 - Encapsulates an API to the enterprise layer (return entities). 
-- Per domain (e.g. HeroDataManager, ImageDataManager)
+- Grouped around domains, e.g. Hero, Image, User
 - The data manager knows where to fetch data from and knows if something should be persisted 
 - Does not know the underlaying technologies used of storage or service.
 - May have multiple subscribed interactors
@@ -156,7 +130,7 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 
 **Storage**
 - Faster, local storage or cache (e.g. NSUserDefaults, CoreData etc)
-- Api should be simple and fast
+- Api should be simple and fast.
 
 ---
 
@@ -169,16 +143,14 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - Responsible for creating and wiring up Viper module.
 - Produces and returns UIViewController retaining the module. 
 - Must contain at least one building method.
-- UIKit aware
 
 **Router:**
 - An EXIT point from the module.
 - Takes care of routing from one module to another.
-- UIKit
 
 ---
 
-# Ready for full picture?
+# Ready for the full picture?
 *...you've been warned!*
 
 ---
@@ -194,21 +166,24 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 
 # Pros:
 
+- Testable
+- Small and specialised classes
 - Clear boundaries between layers and data types
 - Represents data flow steps and transformation very well
 - Promotes composition & protocol oriented design
 - Promotes structured code
-- Small and specialised classes
-- Small files
 - Easy to work in teams (not many reasons to change one file)
 
 ---
 
-- Testable (ask `Richard` and `Hossein`)
-- Teaches you take care about naming conventions (so many files and types ;-)
+# Pros cd...
+
+- Forces you take care about naming conventions (so many files and types ;-)
 - Teaches discipline (every time I broke pattern, I had issues with testing)
-- Gets intuitive in a while
+- Teaches being careful about importing 3rd party libraries
+- Gets somehow natural in a while
 - Fun (if you like LEGO blocks)
+- No singletons!
 
 ---
 
@@ -216,11 +191,21 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 
 - Ceremony: lots of files and boiler-plate code
 - Overkill for some projects (prototyping, etc..)
+- Requires well defined requirements up-front.
 - Mentally challenging to grasp whole module and track data flow
-- Difficult to stay clean at all (lots of conversions, etc...)
+- Lots of data model conversions
 - Difficult to stay clean and reuse the code at the same time
-- Many files 
+
+---
+
+# Cons cd...
+
+- Pain to refactor
 - Pain when developing against iOS frameworks (UIKit, Core Data)
+- Interactors turned out to be not that reusable after all
+- Sometimes feels like a dog chasing its tail....
+- Many files
+- Changes you...
 
 ---
 
@@ -238,15 +223,8 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 
 # Technical issues:
 
-- Swift generics: syntax, circular reference, concrete types requirement
-
-```swift
-
-typealias Presenter = BankListPresenter<BankListRouter, BankListInteractor<BankDataManager>>
-
-```
-
-- Equatable / protocol issues (hacked by type erasure).
+- Swift generics: circular reference issue, syntax, concrete types requirements
+- Equatable / Self requirement protocol issues (hacked by type erasure).
 - Swift not that'protocol-oriented' after all
 
 ---
