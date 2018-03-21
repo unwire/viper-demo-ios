@@ -159,6 +159,12 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 
 ---
 
+# I know...
+
+![inline fit](images/this-is-madness.gif)
+
+---
+
 # Example app
 ![inline fit](images/shut-up.png)
 
