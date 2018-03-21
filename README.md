@@ -2,7 +2,6 @@
 ### Evaluating clean architecture hype in real app.
 
 
---- 
 
 # WARNING 
 
@@ -14,7 +13,6 @@
 - Consciously taken to the extreme
 - Promised a friend to share an experience one day... (celeryman)
 
---- 
 
 # Genesis
 
@@ -22,23 +20,19 @@
 - Disappointed in MVC and MVVM a bit
 - Let's try something new
 
----
 
 # Inspired by...
 
----
 
 # BATMAN
 
 ![inline fit](images/know-your-limits.jpg)![inline fit](images/batman.jpg)
 
----
 
 ### ... and Uncle Bob
 
 ![fit inline](images/robert-uncle-bob-martin-agile-manifesto-interview.jpg)
 
----
 
 ### Nicola Zaghini
 ![inline 400%](images/NicolaZaghini.jpg)
@@ -48,7 +42,6 @@
 [Mastering reuse: A journey into application modularization with VIPER](https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-
 https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-application-modularization-with-viper)
 
----
 
 # Viper-B was found
 
@@ -57,7 +50,6 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - Clean separation of concerns
 - Well defined boundaries of data processing steps and object types (components / models)
 
---- 
 
 # Viper-B module
 ### Represents user story / use case / feature or screen of content
@@ -74,13 +66,11 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - **Service** - data services (database / web)
 - **Storage** - represents fast local storage or cache
 
----
 
 ## Ready to play with some _LEGO_ **BLOCKS**?
 
 ![inline fit](images/lego.jpg)
 
----
 
 # View & Presentation layer
 
@@ -106,7 +96,6 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
  - Simple property types (`String`, `Bool`, `enum`)
  - No `UIKit`
 
----
 
 # Business layer
 
@@ -128,7 +117,6 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - Not suitable for display (presenter's job).
 
 
---- 
 
 # Enterprise layer
 
@@ -156,7 +144,6 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - Faster, local storage or cache (e.g. NSUserDefaults, CoreData etc)
 - Api should be simple and fast
 
----
 
 # Builder & Router
 
@@ -174,16 +161,13 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - Takes care of routing from one module to another.
 - UIKit
 
----
 
 # Ready for full picture?
 *...you've been warned!*
 
----
 
 ![fit](images/viper-full-picture.png)
 
----
 
 # Pros:
 
@@ -195,15 +179,13 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - Small files
 - Easy to work in teams (not many reasons to change one file)
 
----
 
-- Testable (ask `Richard` and `Hossein`)
+- Testable
 - Teaches you take care about naming conventions (so many files and types ;-)
 - Teaches discipline (every time I broke pattern, I had issues with testing)
 - Gets intuitive in a while
 - Fun (if you like LEGO blocks)
 
----
 
 # Cons:
 
@@ -215,7 +197,6 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - Many files 
 - Pain when developing against iOS frameworks (UIKit, Core Data)
 
----
 
 # Subjective conclusions:
 
@@ -227,7 +208,6 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - Just be SOLID
 - Try functional approach?
 
---- 
 
 # Technical issues:
 
@@ -242,7 +222,6 @@ typealias Presenter = BankListPresenter<BankListRouter, BankListInteractor<BankD
 - Equatable / protocol issues (hacked by type erasure).
 - Swift not that'protocol-oriented' after all
 
----
 
 # References
 
@@ -250,12 +229,12 @@ Example app GitHub repo:
 [https://github.com/unwire/viper-demo-ios.git](https://github.com/unwire/viper-demo-ios.git)
 
 
-[Mastering reuse: A journey into application modularization with VIPER] (https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-application-modularization-with-viper)
-[The Principles of Clean Architecture by Uncle Bob Martin] (https://www.youtube.com/watch?v=o_TH-Y78tt4)
-[Brigade’s Experience Using an MVC Alternative] (https://medium.com/brigade-engineering/brigades-experience-using-an-mvc-alternative-36ef1601a41f#.bopro9en4)
-[Architecting Apps with (B)VIPER Modules] (http://www.mttnow.com/blog/architecting-mobile-apps-with-bviper-modules)
-[Architecting iOS Apps with VIPER] (https://www.objc.io/issues/13-architecture/viper/)
-[iOS Architecture Patterns] (https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52#.le3733b8o)
-[#8 VIPER to be or not to be?] (https://swifting.io/blog/2016/03/07/8-viper-to-be-or-not-to-be)
+- [Mastering reuse: A journey into application modularization with VIPER] (https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-application-modularization-with-viper)
+- [The Principles of Clean Architecture by Uncle Bob Martin] (https://www.youtube.com/watch?v=o_TH-Y78tt4)
+- [Brigade’s Experience Using an MVC Alternative] (https://medium.com/brigade-engineering/brigades-experience-using-an-mvc-alternative-36ef1601a41f#.bopro9en4)
+- [Architecting Apps with (B)VIPER Modules] (http://www.mttnow.com/blog/architecting-mobile-apps-with-bviper-modules)
+- [Architecting iOS Apps with VIPER] (https://www.objc.io/issues/13-architecture/viper/)
+- [iOS Architecture Patterns] (https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52#.le3733b8o)
+- [#8 VIPER to be or not to be?] (https://swifting.io/blog/2016/03/07/8-viper-to-be-or-not-to-be)
 
 
