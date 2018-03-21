@@ -5,8 +5,7 @@
 
 # WARNING 
 
-## Talk may carry **strong** over-architecting symptoms.
-## Please proceed with _caution_!
+Example may carry **strong** over-architecting symptoms. Please proceed with _caution_!
 
 - Not necessary an expert view, just average dev tryout
 - Just another Viper implementation agreements
