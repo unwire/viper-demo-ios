@@ -1,5 +1,3 @@
-autoscale: true
-
 # VIPER-B
 ### Evaluating clean architecture hype in real app.
 
@@ -184,11 +182,6 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 ---
 
 ![fit](images/viper-full-picture.png)
-
----
-
-# Example app
-![inline fit](images/shut-up.png)
 
 ---
 
