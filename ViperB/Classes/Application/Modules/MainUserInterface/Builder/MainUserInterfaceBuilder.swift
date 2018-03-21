@@ -19,8 +19,9 @@ class MainUserInterfaceBuilder: EnvironmentConsumer, BuilderType {
     }()
 
     func build() -> UIViewController {
-        let svc = SuperHeroListBuilder(environment: environment).build()
-        let navigationController = UINavigationController(rootViewController: svc)
+        let builder = SuperHeroListBuilder(environment: environment)
+        let viewController = builder.build()
+        let navigationController = UINavigationController(rootViewController: viewController)
         return navigationController
     }
 }

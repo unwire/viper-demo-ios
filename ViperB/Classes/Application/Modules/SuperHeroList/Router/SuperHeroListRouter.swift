@@ -16,12 +16,13 @@ class SuperHeroListRouter: EnvironmentConsumer, SuperHeroListRouterType {
     var detailsBuilder: SuperHeroDetailsBuilder?
 
     func open(model: SuperHeroListModelType) {
-        detailsBuilder = SuperHeroDetailsBuilder(environment: environment,
-                                                 model: model,
-                                                 delegate: self)
-        let view = detailsBuilder?.build()
-        let nc = UINavigationController(rootViewController: view!)
-        self.baseView?.present(nc, animated: true, completion: nil)
+        let builder = SuperHeroDetailsBuilder(environment: environment,
+                                              model: model,
+                                              delegate: self)
+        let viewController = builder.build()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        self.baseView?.present(navigationController, animated: true, completion: nil)
+        detailsBuilder = builder
     }
 }
 

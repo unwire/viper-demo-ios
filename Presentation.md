@@ -1,26 +1,38 @@
+build-lists: true
 autoscale: true
 
-# VIPER-B
-### Evaluating clean architecture hype in real app.
+# Evaluating clean architecture in a real app. [^1]
+## VIPER-B
 
+[^1]: Lukasz Margielewski, iOS Tech Lead at Unwire
 
 --- 
 
+# Introduction
+
+- Explain motivation
+- What is Viper-B
+- Pros & Cons
+- Code example
+- Conclusions
+
+---
+
 # WARNING 
 
-## Talk may carry **strong** over-architecting symptoms.
+## Talk may contain **strong** symptoms of over-architecture.
 ## Please proceed with _caution_!
 
-- Not necessary an expert view, just average dev tryout
-- Just another Viper implementation agreements
-- Consciously taken to the extreme
-- Promised a friend to share an experience one day... (celeryman)
+- Not necessarily an expert view, just an average dev tryout
+- Just another Viper implementation
+- Consciously takes clean architecture approach to the extreme
+- Promised a friend that I would share this experience one day... ![fit inline](images/celeryman.gif)
 
 --- 
 
 # Genesis
 
-- New, big and well project when Swift 3.0 was in beta
+- New, large and well defined project
 - Disappointed in MVC, MVVM and MVVM-C a bit
 - Let's try something new...
 
@@ -45,6 +57,8 @@ autoscale: true
 ### Nicola Zaghini
 ![inline 400%](images/NicolaZaghini.jpg)
 
+- VIPER-B acronym belongs to him
+
 !!! Must watch video:
 
 [Mastering reuse: A journey into application modularization with VIPER](https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-
@@ -54,12 +68,28 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 
 # Why Viper-B?
 
-- Describes components well
+- Describes components accurately
 - Well defined application layers: view, presentation, business, enterprise, routing
 - Clear responsibilities and boundaries
-- Small components, resembling units
 
 ---
+
+# VIPER-B
+
+- Oriented around modules
+- One module represents screen of content (or feature)
+- Let's see what makes a Viper module
+
+**BE PREPARED!!!**
+
+_I mean, really!_
+ 
+---
+
+![fit](images/viper-full-picture.png)
+
+---
+
 
 # View & Presentation layer
 
@@ -89,12 +119,7 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 
 # Business layer
 
-![left fit](images/viper-presenter-interactor.png)
-
-**Model**
-- Encapsulates data model of results coming from **INTERACTOR**.
-- Contains raw properties that are interesting for the use case.
-- Not suitable for display (presenter's job).
+![left fit](images/viper-interactor-enterprise-layer.png)
 
 **Interactor**
 - A PONSO encapsulating business rules for specific use case.
@@ -102,27 +127,32 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - Knows what tasks needs to be carried out before returning stuff to the presenter.
 - Does not care where data comes from, uses data manager(s) for this.
 - Does not care about presentation.
-- Can subscribe to events from a data managers
-- Api should have very specific methods to meet business tasks.
+- Can subscribe to events from data managers
+- Api should have very specific methods to meet business requirements.
+
+**Model**
+- Encapsulates data model of results coming from **INTERACTOR**.
+- Contains raw properties that are interesting for the use case.
+- Not suitable for display (presenter's job).
 
 --- 
 
 # Enterprise layer
 
-![left fit](images/viper-interactor-enterprise-layer.png)
+![left fit](images/viper-enterprise-layer.png)
+
+**Data Manager** (entity Gateway)
+- Encapsulates an API to the enterprise layer (returns entities). 
+- Grouped around domains, e.g. Hero, Image, User
+- The data manager knows where to fetch data from and knows if something should be persisted 
+- Does not know the underlaying technologies used for storage or service
+- May have multiple subscribed interactors
+- Longer life-span
 
 **Entity**
 - Enterprise data model.
 - Not application specific (e.g. coming from external database scheme or web service)
 - Primitives / database-like properties (Int, String)
-
-**Data Manager** (entity Gateway)
-- Encapsulates an API to the enterprise layer (return entities). 
-- Grouped around domains, e.g. Hero, Image, User
-- The data manager knows where to fetch data from and knows if something should be persisted 
-- Does not know the underlaying technologies used of storage or service.
-- May have multiple subscribed interactors
-- Longer life-span
 
 **Service**
 - Service to get data from slower resources (network)
@@ -141,17 +171,12 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 **Builder:**
 - An ENTRY point to the module.
 - Responsible for creating and wiring up Viper module.
-- Produces and returns UIViewController retaining the module. 
+- Produces and returns UIViewController, retaining the module. 
 - Must contain at least one building method.
 
 **Router:**
 - An EXIT point from the module.
 - Takes care of routing from one module to another.
-
----
-
-# Ready for the full picture?
-*...you've been warned!*
 
 ---
 
@@ -165,11 +190,6 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 
 ---
 
-# Example app
-![inline fit](images/shut-up.png)
-
----
-
 # Pros:
 
 - Testable
@@ -178,16 +198,16 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - Represents data flow steps and transformation very well
 - Promotes composition & protocol oriented design
 - Promotes structured code
-- Easy to work in teams (not many reasons to change one file)
+- Facilitates working in teams (not many reasons to change one file)
 
 ---
 
 # Pros cd...
 
-- Forces you take care about naming conventions (so many files and types ;-)
-- Teaches discipline (every time I broke pattern, I had issues with testing)
-- Teaches being careful about importing 3rd party libraries
-- Gets somehow natural in a while
+- Forces you to take care about naming conventions (so many files and types ;-)
+- Imposes discipline (every time I broke pattern, I had issues with testing)
+- Highlights issues arising from overuse of 3rd party libraries
+- Becomes natural, after a while
 - Fun (if you like LEGO blocks)
 - No singletons!
 
@@ -209,9 +229,14 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 - Pain to refactor
 - Pain when developing against iOS frameworks (UIKit, Core Data)
 - Interactors turned out to be not that reusable after all
-- Sometimes feels like a dog chasing its tail....
 - Many files
 - Changes you...
+- Sometimes feels like a dog chasing its tail
+
+---
+
+# Example app
+![inline fit](images/shut-up.png)
 
 ---
 
@@ -231,7 +256,8 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 
 - Swift generics: circular reference issue, syntax, concrete types requirements
 - Equatable / Self requirement protocol issues (hacked by type erasure).
-- Swift not that'protocol-oriented' after all
+- Swift not that protocol-oriented after all
+
 
 ---
 
