@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+        <array key="HelveticaNeueExtras.ttc">
+            <string>HelveticaNeue-CondensedBold</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-ThinItalic</string>
+            <string>HelveticaNeue-UltraLight</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="5dC-V7-wX5"/>
+                <outlet property="descriptionLabel" destination="1J4-Ge-s4K" id="uaZ-vT-A3l"/>
+                <outlet property="heroNameLabel" destination="vYc-R8-XaC" id="LGw-Jn-KW4"/>
+                <outlet property="imageView" destination="cLr-Hz-12X" id="eeb-kf-edM"/>
+                <outlet property="isLoadingIndicator" destination="W0i-99-u2M" id="TeH-nR-Urb"/>
+                <outlet property="mainSuperPowerLabel" destination="i9f-8H-xiH" id="OfY-UQ-RrX"/>
+                <outlet property="mainSuperPowerTextLabel" destination="fOc-PM-sr0" id="PDh-r3-cDl"/>
+                <outlet property="mightnessLabel" destination="Ino-Bi-7lo" id="B2c-9b-ocP"/>
+                <outlet property="mightnessTextLabel" destination="sc6-dn-arv" id="Mr1-x4-fKz"/>
+                <outlet property="rankLabel" destination="yWB-zY-D3K" id="F5z-8U-jql"/>
+                <outlet property="rankTextLabel" destination="0gJ-l6-qEg" id="YYN-nC-Egg"/>
+                <outlet property="taglineLabel" destination="00q-Do-YBB" id="DpZ-Hd-3KJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cLr-Hz-12X">
+                    <rect key="frame" x="90" y="20" width="195" height="195"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="cLr-Hz-12X" secondAttribute="height" id="ZgU-Mm-n98"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Superhero name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYc-R8-XaC">
+                    <rect key="frame" x="20" y="235" width="335" height="33.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="This is a punchline!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00q-Do-YBB">
+                    <rect key="frame" x="20" y="288.5" width="335" height="24"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Main superpower:" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9f-8H-xiH">
+                    <rect key="frame" x="20" y="332.5" width="144.5" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="144.5" id="SeO-Oj-Sx8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Superpower!" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOc-PM-sr0">
+                    <rect key="frame" x="172.5" y="332.5" width="182.5" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="High" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gJ-l6-qEg">
+                    <rect key="frame" x="172" y="361.5" width="183" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Rank:" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWB-zY-D3K">
+                    <rect key="frame" x="20" y="361.5" width="144.5" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Mightness:" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ino-Bi-7lo">
+                    <rect key="frame" x="20" y="390.5" width="144.5" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J4-Ge-s4K">
+                    <rect key="frame" x="20" y="431.5" width="335" height="366.5"/>
+                    <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Very mightly" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sc6-dn-arv">
+                    <rect key="frame" x="172" y="390.5" width="183" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="W0i-99-u2M">
+                    <rect key="frame" x="169" y="99" width="37" height="37"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fOc-PM-sr0" secondAttribute="trailing" constant="20" id="1xo-xx-DNs"/>
+                <constraint firstItem="W0i-99-u2M" firstAttribute="centerX" secondItem="cLr-Hz-12X" secondAttribute="centerX" id="2Ws-8P-nh2"/>
+                <constraint firstItem="yWB-zY-D3K" firstAttribute="leading" secondItem="i9f-8H-xiH" secondAttribute="leading" id="36B-MF-7zs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0gJ-l6-qEg" secondAttribute="trailing" constant="20" id="4SQ-gP-cFI"/>
+                <constraint firstItem="vYc-R8-XaC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="4av-Dj-8NR"/>
+                <constraint firstItem="1J4-Ge-s4K" firstAttribute="top" secondItem="Ino-Bi-7lo" secondAttribute="bottom" constant="20" id="7F2-Da-r7c"/>
+                <constraint firstItem="fOc-PM-sr0" firstAttribute="baseline" secondItem="i9f-8H-xiH" secondAttribute="baseline" id="8f0-fD-kd6"/>
+                <constraint firstItem="0gJ-l6-qEg" firstAttribute="baseline" secondItem="yWB-zY-D3K" secondAttribute="baseline" id="BbH-1c-K3v"/>
+                <constraint firstItem="yWB-zY-D3K" firstAttribute="trailing" secondItem="i9f-8H-xiH" secondAttribute="trailing" id="EQ5-tn-KCv"/>
+                <constraint firstItem="i9f-8H-xiH" firstAttribute="top" secondItem="00q-Do-YBB" secondAttribute="bottom" constant="20" id="FV2-ZP-NbC"/>
+                <constraint firstItem="cLr-Hz-12X" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-90" id="KSV-ub-cza"/>
+                <constraint firstItem="Ino-Bi-7lo" firstAttribute="top" secondItem="yWB-zY-D3K" secondAttribute="bottom" constant="8" id="SiO-lm-7A6"/>
+                <constraint firstItem="sc6-dn-arv" firstAttribute="leading" secondItem="0gJ-l6-qEg" secondAttribute="leading" id="TTe-92-eaS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1J4-Ge-s4K" secondAttribute="trailing" constant="20" id="Upy-z4-G2T"/>
+                <constraint firstItem="sc6-dn-arv" firstAttribute="baseline" secondItem="Ino-Bi-7lo" secondAttribute="baseline" id="Vt4-UZ-6UZ"/>
+                <constraint firstItem="00q-Do-YBB" firstAttribute="top" secondItem="vYc-R8-XaC" secondAttribute="bottom" constant="20" id="WDP-Vv-p62"/>
+                <constraint firstItem="00q-Do-YBB" firstAttribute="trailing" secondItem="vYc-R8-XaC" secondAttribute="trailing" id="WRN-2Z-dBb"/>
+                <constraint firstItem="Ino-Bi-7lo" firstAttribute="trailing" secondItem="yWB-zY-D3K" secondAttribute="trailing" id="YcM-pQ-9G2"/>
+                <constraint firstItem="1J4-Ge-s4K" firstAttribute="leading" secondItem="Ino-Bi-7lo" secondAttribute="leading" id="ZMR-7p-Z12"/>
+                <constraint firstItem="W0i-99-u2M" firstAttribute="centerY" secondItem="cLr-Hz-12X" secondAttribute="centerY" id="c3X-TA-pFk"/>
+                <constraint firstItem="yWB-zY-D3K" firstAttribute="top" secondItem="i9f-8H-xiH" secondAttribute="bottom" constant="8" id="f9d-Ni-QY1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sc6-dn-arv" secondAttribute="trailing" constant="20" id="gZv-8u-hDt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vYc-R8-XaC" secondAttribute="trailing" constant="20" id="hX4-lW-vfM"/>
+                <constraint firstItem="cLr-Hz-12X" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="ibb-8f-GG6"/>
+                <constraint firstItem="Ino-Bi-7lo" firstAttribute="leading" secondItem="yWB-zY-D3K" secondAttribute="leading" id="lNp-fZ-uSE"/>
+                <constraint firstItem="00q-Do-YBB" firstAttribute="leading" secondItem="vYc-R8-XaC" secondAttribute="leading" id="nD9-d1-jU9"/>
+                <constraint firstItem="i9f-8H-xiH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="nlo-Kg-jr1"/>
+                <constraint firstItem="vYc-R8-XaC" firstAttribute="centerX" secondItem="cLr-Hz-12X" secondAttribute="centerX" id="orW-6v-1M4"/>
+                <constraint firstItem="vYc-R8-XaC" firstAttribute="top" secondItem="cLr-Hz-12X" secondAttribute="bottom" constant="20" id="quc-jO-u8r"/>
+                <constraint firstItem="fOc-PM-sr0" firstAttribute="leading" secondItem="i9f-8H-xiH" secondAttribute="trailing" constant="8" id="scz-ig-2wN"/>
+                <constraint firstItem="cLr-Hz-12X" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="wKk-EI-pe4"/>
+                <constraint firstItem="0gJ-l6-qEg" firstAttribute="leading" secondItem="fOc-PM-sr0" secondAttribute="leading" id="wxC-oc-bof"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-1503" y="-730"/>
+        </view>
+    </objects>
+</document>
