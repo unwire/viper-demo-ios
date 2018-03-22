@@ -127,11 +127,6 @@ https://skillsmatter.com/skillscasts/7931-mastering-reuse-a-journey-into-applica
 ![fit](images/viper-full-picture.png)
 
 
-# I know...
-
-![inline fit](images/this-is-madness.gif)
-
-
 # Pros:
 
 - Testable
